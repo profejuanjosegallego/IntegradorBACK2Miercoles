@@ -2,26 +2,33 @@ package com.example.API.MODELO.MIERCOLES.modelos;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "CarlosMonterrosa")
 public class CarlosMonterrosa {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "direccion", length = 80)
     private String direccion;
+
+    @Column(name = "es_hincha_verdolaga")
     private Boolean esHinchaVerdolaga;
 
-    @Entity
-    @Table(name="CarlosMonterrosa")
-
+    // Constructor vacío requerido por JPA
     public CarlosMonterrosa() {
     }
-    
+
+    // Getters y Setters
     public Integer getId() {
         return id;
     }
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     public void setId(Integer id) {
         this.id = id;
     }
-    @Column(name="direccion", length = 80)
+
     public String getDireccion() {
         return direccion;
     }
