@@ -12,7 +12,7 @@ public class VanessaMosquera {
 
     @Column(name = "dirrecion",length = 100)
     private String dirrecion;
-    
+
     @Column(name = "Hincha")
     private Boolean esHinchadelverdolaga;
 
