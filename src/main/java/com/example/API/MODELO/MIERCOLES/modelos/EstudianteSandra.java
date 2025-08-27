@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "estudiantesandra")
 public class EstudianteSandra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
