@@ -1,12 +1,27 @@
 package com.example.API.MODELO.MIERCOLES.modelos;
 
 import com.example.API.MODELO.MIERCOLES.ayudas.NuevoEnumAlejandro;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "TablaNueva")
 public class NuevaTablaAlejandro {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "Nombres", nullable = false, unique = true, length = 60)
     private String nombres;
+
+    @Column(name = "Apellidos", nullable = false, unique = true, length = 60)
     private String apellidos;
+
+    @Column(name = "EstaMatriculado", nullable = false, unique = false)
     private Boolean estaMatriculado;
+
+    @Column(name = "EstadoMatricula", nullable = false, unique = false)
+    @Enumerated(value = EnumType.STRING)
     private NuevoEnumAlejandro estadoMatricula;
 
     public NuevaTablaAlejandro() {
