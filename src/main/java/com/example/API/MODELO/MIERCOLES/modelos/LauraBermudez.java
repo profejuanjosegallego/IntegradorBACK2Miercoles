@@ -2,6 +2,8 @@ package com.example.API.MODELO.MIERCOLES.modelos;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "LauraBermudez")
 public class LauraBermudez {
@@ -24,17 +26,21 @@ public class LauraBermudez {
     @Column(name = "favoriteAnimal")
     private String favoriteAnimal;
 
+    @Column(name = "birthday")
+    private LocalDate birthday;
+
     // constructors
 
     public LauraBermudez() {
     }
 
-    public LauraBermudez(String adress, Boolean isVerdolaga, Integer id, String fullName, String favoriteAnimal) {
+    public LauraBermudez(String adress, Boolean isVerdolaga, Integer id, String fullName, String favoriteAnimal, LocalDate birthday) {
         this.adress = adress;
         this.isVerdolaga = isVerdolaga;
         this.id = id;
         this.fullName = fullName;
         this.favoriteAnimal = favoriteAnimal;
+        this.birthday = birthday;
     }
 
     // getters
@@ -59,6 +65,10 @@ public class LauraBermudez {
         return favoriteAnimal;
     }
 
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
     // setters
 
     public void setAdress(String adress) {
@@ -79,5 +89,9 @@ public class LauraBermudez {
 
     public void setFavoriteAnimal(String favoriteAnimal) {
         this.favoriteAnimal = favoriteAnimal;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 }
