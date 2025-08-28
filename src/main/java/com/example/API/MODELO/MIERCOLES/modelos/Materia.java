@@ -17,8 +17,9 @@ import jakarta.persistence.*;
         private String nombre_materia;
         @Column(name = "codigo_materia",nullable = false,unique = false,length = 100)
         private String codigo_materia;
-        @ManyToOne
-        @JoinColumn(name = "docente_id", referencedColumnName = "id")
+
+       // @ManyToOne
+       // @JoinColumn(name = "docente_id", referencedColumnName = "id")
 
 
 
@@ -26,11 +27,11 @@ import jakarta.persistence.*;
         public  Materia(){
 
         }
-        public Materia(Integer id_materia, String nombre_materia, String codigo_materia, Docente docente) {
+        public Materia(Integer id_materia, String nombre_materia, String codigo_materia) {
             this.id_materia = id_materia;
             this.nombre_materia = nombre_materia;
             this.codigo_materia = codigo_materia;
-            this.docente = docente;
+            //this.docente = docente;
         }
 
         public Integer getId_materia() {
@@ -57,13 +58,12 @@ import jakarta.persistence.*;
             this.codigo_materia = codigo_materia;
         }
 
-        public Docente getDocente_id() {
-            return docente;
+       // public Docente getDocente_id() {
+           // return docente;
         }
 
-        public void setDocente_id(Docente docente) {
-            this.docente = docente;
+        //public void setDocente_id(Docente docente) {
+           // this.docente = docente;
         }
-    }
-
+}
 
